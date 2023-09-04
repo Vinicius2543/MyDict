@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Sobre nós</title>
+    <style>
+        body{
+            background: url(https://static.vecteezy.com/ti/vetor-gratis/p1/23372938-abstrato-suave-borrao-azul-malha-cor-gradiente-efeito-fundo-para-grafico-projeto-elemento-vetor.jpg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="wrapper">
+                <h1 style="margin-top:20px;margin-bottom: 0;">Pacote Basíco</h1>
+                <br>
+                <h2>Beneficios de assinar:</h2>
+                <p class="beneficios">
+                    Você tera acesso a varias linguagens como: <br>
+                    Pyhton; <br>
+                    Java; <br>
+                    C <br><br><br>
+                    <span class="price">R$ 9,99</span>
+                </p>
+
+                <button type="button" class="btn btn-primary assinar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Assinar
+                </button>
+            </div>
+            <div class="wrapper">
+                <h1 style="margin-top:15px;margin-bottom: 0;">Pacote Apoidor</h1>
+                <br>
+                <h2>Beneficios de assinar:</h2>
+                <p class="beneficios">
+                    Você tera acesso a varias linguagens como: <br>
+                    Pyhton; <br>
+                    Java; <br>
+                    C <br>
+                    E o melhor! Apoiara os criadores 👍 <br><br>
+                    <span class="price">R$ 39,99</span>
+                </p>
+
+                <button type="button" class="btn btn-primary assinar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Assinar
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Pegadinha do Malandro!🤣😂</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Você iria pagar mesmo para ter acesso?
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="index.html"><button type="button" class="btn btn-primary">Ir para o site!</button></a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
