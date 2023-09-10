@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: auto;
+    background: url(https://static.vecteezy.com/ti/vetor-gratis/p1/14462167-fundo-azul-de-desfoque-suave-abstrato-vetor.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+main{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    
+}
+
+.wrapper{
+    width: 440px;
+    height: 440px;
+    border: 1px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    filter: brightness(0.95) opacity(0.95);
+    color: #162938;
+    /* display: none; */
+    position: relative;
+}
+
+.wrapper h1 {
+    margin: 20px;
+    text-align: center;
+}
+
+.wrapper h2{
+    margin-left: 20px;
+    font-size: 27px;
+    
+}
+
+.beneficios{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.price{
+    margin-top: 20px;
+    color: rgb(0, 148, 0);
+}
+
+.wrapper button{
+    width: 70%;
+    height: 50px;
+    background-color: rgba(6, 247, 6, 0.801);
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 66px;
+}
+
+@media screen and (max-width:500px) {
+    .wrapper{
+        width: 350px;
+        height: 440px;
+    } 
+
+    .wrapper h1 {
+        margin: 16px;
+        text-align: center;
+    }
+    
+    .wrapper h2{
+        margin-left: 20px;
+        font-size: 20x;
+        
+    }
+    
+    .beneficios{
+        margin-left: 20px;
+    }
+        
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -26,12 +26,12 @@
             <br>
             <form action="">
                 <fieldset>
-                    <label for="termo">Digite o termo desejado para buscar:</label>
+                    <label for="input_termo">Digite o termo desejado para buscar:</label>
                     <br>
                     <input type="text" name="" class="input_termo" >
                     <br>
                     <label for="linguagem">Selecione a linguagem desejada:</label>
-                    <select id="linguagem" style="width: 50%">
+                    <select id="linguagem">
                         <option value="#" selected>Selecione a linguagem </option>
                         <option value="python">Python</option>
                         <option value="java">Java</option>
@@ -39,9 +39,9 @@
                     </select>
                     <p id="erro" style="color:red"></p>
                     <br>
-                    <button id="search" onclick="gerarResultado()">Buscar</button>
                 </fieldset>
             </form>
+            <button id="search" onclick="gerarResultado()">Buscar</button>
         </div>
 
         <div class="response">
@@ -57,6 +57,7 @@
         // Select2
         $(document).ready(function() {
             $('#linguagem').select2();
+            // $('#listaTermos').select2();
         });
 
         function gerarResultado(){

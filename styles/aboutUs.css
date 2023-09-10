@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: auto;
+    background: url(https://static.vecteezy.com/ti/vetor-gratis/p1/14462167-fundo-azul-de-desfoque-suave-abstrato-vetor.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    padding: 0 50px;
+    z-index: 2;
+}
+
+nav{
+    background-color: transparent;
+    width: 95%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.links a{
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 20px;
+    color: #162938;
+    padding-left: 20px;
+}
+
+.links a:hover{
+    color: white;
+}
+
+.response{
+    width: 750px;
+    height: auto;
+    display: block;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    filter: brightness(0.95) opacity(0.95);
+    color: #162938;
+}
+
+.response h1 {
+    margin: 10px 0 20px 42px;
+}
+
+.response p {
+    font-size: 18px;
+    width: 89%;
+    margin: auto;
+}
+
+.container-creator{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.squad{
+    width: 374px;
+    height: 130px;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    
+}
+
+.response h3{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.response h5{
+    margin: 20px 0px 15px 42px;
+}
+
+@media screen and (max-width: 768px){
+    .response{
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .response{
+        width: 350px;
+    }
+
+    .response h1 {
+        margin: 10px 0 20px 18px;
+    }
+}
