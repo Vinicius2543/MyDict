@@ -26,16 +26,17 @@
             <br>
             <form action="">
                 <fieldset>
-                    <label for="input_termo">Digite o termo desejado para buscar:</label>
-                    <br>
-                    <input type="text" name="" class="input_termo" >
-                    <br>
                     <label for="linguagem">Selecione a linguagem desejada:</label>
-                    <select id="linguagem">
+                    <select id="linguagem" onchange="gerarOptions()">
                         <option value="#" selected>Selecione a linguagem </option>
                         <option value="python">Python</option>
                         <option value="java">Java</option>
                         <option value="c">C</option>
+                    </select>
+                    <br><br>
+                    <label for="selectTermo">Selecione o termo desejado:</label>
+                    <select id="selectTermo" disabled>
+                        <option value="#" selected>Selecione a linguagem </option>
                     </select>
                     <p id="erro" style="color:red"></p>
                     <br>
@@ -59,16 +60,56 @@
             $('#linguagem').select2();
             // $('#listaTermos').select2();
         });
+        $(document).ready(function() {
+            $('#selectTermo').select2();
+            // $('#listaTermos').select2();
+        });
+
+        function gerarOptions(){
+            const option = document.getElementById('linguagem').value
+            const select = document.getElementById('selectTermo')
+
+            if(option == 'python'){
+                select.innerHTML = ""
+                // console.log('pyhton')
+                select.removeAttribute("disabled")
+                pegarChaves = Object.keys(dicionario_python)
+                for (var chaves of pegarChaves){
+                    select.innerHTML += `<option value="${chaves}">${chaves}</option>`
+                }       
+            }
+
+            if(option == 'java'){
+                select.innerHTML = ""
+                // console.log('java')
+                select.removeAttribute("disabled")
+                pegarChaves = Object.keys(dicionario_java)
+                for (var chaves of pegarChaves){
+                    select.innerHTML += `<option value="${chaves}">${chaves}</option>`
+                }
+            }
+
+            if(option == 'c'){
+                select.innerHTML = ""
+                // console.log('c')
+                select.removeAttribute("disabled")
+                pegarChaves = Object.keys(dicionario_c)
+                for (var chaves of pegarChaves){
+                    select.innerHTML += `<option value="${chaves}">${chaves}</option>`
+                }
+            }
+        }
 
         function gerarResultado(){
             event.preventDefault();
             const wrapper = document.getElementsByClassName('wrapper')[0]
-            const valor = document.getElementsByClassName('input_termo')[0].value
+            const selectValue = document.getElementById('selectTermo').value
             const option = document.getElementById('linguagem').value
             const erro = document.getElementById('erro')
             const response = document.getElementsByClassName('response')[0]
             const termo = document.getElementById('termo')
             const result = document.getElementById('result')
+            var pegarChaves
 
 
             if(option == '#'){
@@ -78,44 +119,38 @@
 
             if(option == 'python'){
                 // console.log('pyhton')
+                
+               
+                wrapper.style.display = 'none'
+                response.style.display = 'block'
 
-                if (dicionario_python.hasOwnProperty(valor)) {
-                    wrapper.style.display = 'none'
-                    response.style.display = 'block'
-
-                    termo.innerText = valor
-                    result.innerHTML = dicionario_python[valor]
-                } else {
-                    erro.innerText = 'Termo não encontrado no dicionario. Tente novamente escrevendo em letras minusculas!'
-                }
+                termo.innerText = selectValue.charAt(0).toUpperCase() + selectValue.slice(1)
+                result.innerHTML = dicionario_python[selectValue].replace(";","<br>")
+                
+                   
+                
             }
 
             if(option == 'java'){
                 // console.log('java')
 
-                if (dicionario_java.hasOwnProperty(valor)) {
-                    wrapper.style.display = 'none'
-                    response.style.display = 'block'
+                wrapper.style.display = 'none'
+                response.style.display = 'block'
 
-                    termo.innerText = valor
-                    result.innerHTML = dicionario_java[valor]
-                } else {
-                    erro.innerText = 'Termo não encontrado no dicionario. Tente novamente escrevendo em letras minusculas!'
-                }
+                termo.innerText = selectValue.charAt(0).toUpperCase() + selectValue.slice(1)
+                result.innerHTML = dicionario_python[selectValue]
+
             }
 
             if(option == 'c'){
                 // console.log('c')
+                wrapper.style.display = 'none'
+                response.style.display = 'block'
 
-                if (dicionario_c.hasOwnProperty(valor)) {
-                    wrapper.style.display = 'none'
-                    response.style.display = 'block'
+                termo.innerText = selectValue.charAt(0).toUpperCase() + selectValue.slice(1)
+                result.innerHTML = dicionario_python[selectValue]
 
-                    termo.innerText = valor
-                    result.innerHTML = dicionario_c[valor]
-                } else {
-                    erro.innerText = 'Termo não encontrado no dicionario. Tente novamente escrevendo em letras minusculas!'
-                }
+
             }
             
         }
